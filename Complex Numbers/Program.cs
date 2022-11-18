@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Complex c = new Complex(1,5);
+
+
+            Console.WriteLine(c);
         }
     }
 }
