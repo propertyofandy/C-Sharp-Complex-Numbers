@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Complex c = new Complex(1,5);
+            Complex c = new Complex(1,-5);
 
 
-            Console.WriteLine(c);
+            Console.WriteLine(c^5);
         }
     }
 }
