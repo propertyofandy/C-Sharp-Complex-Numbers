@@ -7,7 +7,7 @@
             Complex c = new Complex(1,-5);
 
 
-            Console.WriteLine(c^5);
+            Console.WriteLine(c^2);
         }
     }
 }

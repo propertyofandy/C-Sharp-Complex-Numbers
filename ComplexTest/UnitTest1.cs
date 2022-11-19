@@ -33,32 +33,36 @@ namespace ComplexTest
              * testing +, -, *, / operators
              */
 
-            Complex c = new Complex(7,12);
-            Complex c2 = new Complex(14, 3);
+            Complex c = new Complex(1,1);
+            Complex c2 = new Complex(2, 3);
 
             Complex c3 = c + c2;
 
-            Assert.AreEqual(c3.ToString(), "21 + 15i");
+            Assert.AreEqual(c3.ToString(), "3 + 4i");
 
             c3 = c - c2;
 
-            Assert.AreEqual(c3.ToString(), "-7 + 9i");
+            Assert.AreEqual(c3.ToString(), "-1 - 2i");
 
             c3 = c / c2;
 
-            Assert.AreEqual(c3.ToString(), "4.5");
+            Assert.AreEqual(c3.ToString(), "0.8333333333333333");
 
             c3 = c * c2;
 
-            Assert.AreEqual(c3.ToString(), "62 + 189i");
+            Assert.AreEqual(c3.ToString(), "-1 + 5i");
 
             c3 = c ^ 2;
 
-            Assert.AreEqual(c3.ToString(), "-95");
+            Assert.AreEqual(c3.ToString(), "0");
 
             c3 = c ^ 1;
 
             Assert.AreEqual(c3.ToString(), c.ToString());
+
+            c3 = c ^ -1;
+
+            Assert.AreEqual(c3.ToString(), "1 + 1i");
 
         }
     }
