@@ -87,12 +87,35 @@ namespace Complex_Numbers
 
             return resault;
         }
-
+        
         public static Complex operator ^(Complex c, int exponent)
         {
             Complex resault = new Complex();
+            if(exponent < 0)
+            {
+                if (exponent % 4 == 0)
+                {
+                    resault.Real =1/( c.Real * c.Real + c.Imaginary * c.Imaginary);
+                    resault.Imaginary = 0;
+                }
+                else if (exponent % 3 == 0)
+                {
+                    resault.Real = 1/(c.Real * c.Real);
+                    resault.Imaginary = 1/(c.Imaginary * c.Imaginary * -1);
 
-            if (exponent % 4 == 0)
+                }
+                else if (exponent % 2 == 0)
+                {
+                    resault.Real = 1/(c.Real * c.Real - c.Imaginary * c.Imaginary);
+                    resault.Imaginary = 0;
+                }
+            }
+            else if(exponent == 0)
+            {
+                resault.Real = 2;
+                resault.Imaginary = 0; 
+            }
+            else if (exponent % 4 == 0)
             {
                 resault.Real = c.Real * c.Real+ c.Imaginary*c.Imaginary;
                 resault.Imaginary = 0;
