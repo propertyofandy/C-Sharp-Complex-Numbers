@@ -65,5 +65,34 @@ namespace ComplexTest
             Assert.AreEqual(c3.ToString(), "1 + 1i");
 
         }
+
+        [TestMethod]
+        public void TestBoolOperator()
+        {
+            // testing boolean operators 
+            //<, >, <=, >=, ==, != 
+
+            Complex a = new Complex(1, 1);
+            Complex b = new Complex(2, 3);
+            Complex c = new Complex(2, 3); 
+
+
+            Assert.IsTrue(a!=b);
+            Assert.IsFalse(b!=c);
+
+            Assert.IsFalse(a == b);
+            Assert.IsTrue(b == c);
+
+            Assert.IsFalse(a > b);
+            Assert.IsTrue(a < b);
+
+            Assert.IsTrue(b >= a);
+            Assert.IsFalse(b <= a);
+
+            Assert.IsTrue(b >= c);
+            Assert.IsTrue(b <= c);
+
+
+        }
     }
 }

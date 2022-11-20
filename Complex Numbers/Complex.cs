@@ -46,7 +46,7 @@ namespace Complex_Numbers
         }
 
         
-        //overloading math operators
+        //overloading math operators +, -, *, /, ^
         
         public static Complex operator +(Complex c, Complex c2)
         {
@@ -147,6 +147,66 @@ namespace Complex_Numbers
                 }
             }
             return c; 
+        }
+        
+        // overloading boolean operators
+        // this section involves comparing two complex numbers
+        // note that this is a lexographic comparison as there is no true order Yet 
+        // for the complex numbers 
+
+        public static bool operator <(Complex a, Complex b)
+        {
+            if(a.Real < b.Real)
+            {
+                return true;
+            }
+            else if(a.Real == b.Real && a.Imaginary < b.Imaginary)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool operator >(Complex a, Complex b)
+        {
+            if (a.Real > b.Real)
+            {
+                return true;
+            }
+            else if (a.Real == b.Real && a.Imaginary > b.Imaginary)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // returns the negation of > because if <= is true then > is not and vice versa 
+
+        public static bool operator <=(Complex a, Complex b)
+        {
+            return !(a > b);
+        }
+
+        // returns the negation of <
+        public static bool operator >=(Complex a, Complex b)
+        {
+            return !(a < b);
+        }
+
+        public static bool operator ==(Complex a, Complex b)
+        {
+            if(a.Real == b.Real && a.Imaginary == b.Imaginary)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator !=(Complex a, Complex b)
+        {
+            return !(a==b);
         }
 
     }
